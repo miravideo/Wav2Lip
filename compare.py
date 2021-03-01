@@ -128,11 +128,11 @@ def get_video_data(frames, frame_no):
 
     # H x W x 3 * T
     x = np.concatenate(window_frames, axis=2) / 255.
+
     x = x.transpose(2, 0, 1)
     x = x[:, x.shape[1]//2:]
 
     x = torch.FloatTensor(x)
-
     return x
 
 
